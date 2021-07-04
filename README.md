@@ -8,20 +8,20 @@ A CLI application to calculate rank table on a given league data.
   
 ## Getting Started
 
-To clone the repository, run the following in a terminal.
+To clone this repository, run the following in a terminal.
 ```bash
-$ git clone https://github.com/ShantanuFadnis/league-ranking-application.git
-$ cd league-ranking-application
+git clone https://github.com/ShantanuFadnis/league-ranking-application.git
+cd league-ranking-application
 ```
 
 ## Run Tests
 
-The repository contains a Makefile that has few helper commands to run unit and linting tests.
+This repository contains a Makefile that has few helper commands to run unit and linting tests.
 
 Type the following to see the list of helper commands available.
 
 ```
-$ make
+make
 
 bash-in-container              Execute bash in container
 black                          Run black tests for the application
@@ -42,7 +42,7 @@ unittest                       Run unit tests for the application
 This will first download the base python image from docker hub and then build on top of it.
 
 ```bash
-$ make test-all
+make test-all
 ```
 
 ### Run unittests
@@ -50,7 +50,7 @@ $ make test-all
 Run python unittests.
 
 ```bash
-$ make unittest
+make unittest
 ```
 
 ### Run linting tests
@@ -58,54 +58,79 @@ $ make unittest
 Run linting tests. This application makes use of the following linters - flake8, pylint, mypy, black.
 
 ```bash
-$ make lint-all
+make lint-all
 ```
 
 ### Run [flake8](https://flake8.pycqa.org/en/latest/)
 
 ```bash
-$ make flake8
+make flake8
 ```
 
 ### Run [pylint](https://www.pylint.org/)
 
 ```bash
-$ make pylint
+make pylint
 ```
 
 ### Run [black](https://black.readthedocs.io/en/stable/)
 
 ```bash
-$ make black
+make black
 ```
 
 ### Run blacken (Format your code using black)
 
 ```bash
-$ make blacken
+make blacken
 ```
 
 ### Run [mypy](http://mypy-lang.org/)
 
 ```bash
-$ make mypy
+make mypy
 ```
 
 ## Run Application
 
-The application accepts a path to a text file as input containing results of game, one per line.
-See [in.txt](data/in.txt) for details.
+This application accepts a path to a text file as input containing results of game, one per line. See [in.txt](data/in.txt) for details.
 
-Output is produced as text file under output directory at root of the repository.
+Note: The file must be present inside repository's root folder.
+
+Output is produced as text file under `output` directory at root of this repository.
 
 ```bash
-$ make run input=<input_file>
+make run input=<input_file>
 ```
 
 To see the output produced run the following
 
 ```bash
-$ make show-output
+make show-output
+```
+
+**Example**:
+
+Run application with `data/in.txt` as input:
+
+```bash
+make run input=data/in.txt
+```
+
+Check output:
+```bash
+make show-output
+```
+
+Output:
+
+```
+cat output/*.txt
+1. Tarantulas, 6 pts
+2. Lions, 5 pts
+3. FC Awesome, 1 pt
+3. Snakes, 1 pt
+5. Grouches, 0 pts
 ```
 
 ## Tech Stack

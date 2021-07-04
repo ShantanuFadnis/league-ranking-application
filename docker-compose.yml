@@ -1,0 +1,13 @@
+version: "3.6"
+
+services:
+    app:
+        image: league-ranking-application
+        container_name: league-ranking-application
+        build:
+            context: ./
+            dockerfile: Dockerfile
+        # command: "${COMMAND}"
+        volumes:
+            - ./:/app/
+        network_mode: "bridge"

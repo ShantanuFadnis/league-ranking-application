@@ -1,0 +1,3 @@
+[run]
+source = src
+disable_warnings = already_imported

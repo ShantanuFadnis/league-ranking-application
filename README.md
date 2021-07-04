@@ -133,6 +133,13 @@ cat output/*.txt
 5. Grouches, 0 pts
 ```
 
+## Cleanup
+
+Cleans `output` directory and docker images.
+```bash
+make clear
+```
+
 ## Tech Stack
 
 * PySpark

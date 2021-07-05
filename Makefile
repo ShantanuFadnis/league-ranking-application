@@ -38,8 +38,11 @@ clear: ## Remove containers used in tests
 bash-in-container: ## Execute bash in container
 	@docker-compose -f docker-compose.yml run app bash
 
-run: ## Run application
+run: ## Run application inside Docker
 	docker-compose -f docker-compose.yml run --entrypoint "bin/run.sh ${input} output" --rm --no-deps app
+
+run-local: ## Run application locally in a python virtual environment
+	@source bin/run_local.sh "${input}" "output"
 
 show-output: ## Show output produced after running the application
 	cat output/*.txt

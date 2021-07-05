@@ -3,6 +3,7 @@ A CLI application to calculate rank table on a given league data.
 
 ## Requirements
 
+* python3.9 (Only required to run application in local mode, you will know more about this later in the document)
 * docker
 * docker-compose
   
@@ -39,7 +40,7 @@ unittest                       Run unit tests for the application
 
 ### Run all tests together (unittests and linting tests)
 
-This will first download the base python image from docker hub and then build on top of it.
+This will first download a base python image (version 3.9) from docker hub and then build on top of it.
 
 ```bash
 make test-all
@@ -98,6 +99,18 @@ This application accepts a path to a text file as input containing results of ga
 Note: The file must be present inside repository's root folder.
 
 Output is produced as text file under `output` directory at root of this repository.
+
+You can run this application in 2 ways - 1. Locally, 2. Inside Docker.
+
+### Run Locally
+
+Make sure you have python3.9 installed on your system as this will create a Python Virtual Environment.
+
+```bash
+make run-local input=<input_file>
+```
+
+### Run Inside a Docker Container
 
 ```bash
 make run input=<input_file>

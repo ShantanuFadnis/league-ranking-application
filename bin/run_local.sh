@@ -12,6 +12,14 @@ fi
 input=$1
 output=$2
 
+if [ -z "$input" ]; then
+    echo "Input file required."
+    exit 1
+fi
+
+# Create a Virtual Environment
+python3 -m venv "${PWD}"/venv
+
 # Activate Python Virtual Environment
 source "${PWD}"/venv/bin/activate
 
@@ -19,7 +27,7 @@ source "${PWD}"/venv/bin/activate
 pip install -r "${PWD}"/requirements.txt
 
 # Run application
-source ${PWD}/bin/run.sh "${input}" "${output}"
+python "$PWD"/src/main.py "$input" "$output"
 
 # Deactivate Python Virtual Environment
 deactivate

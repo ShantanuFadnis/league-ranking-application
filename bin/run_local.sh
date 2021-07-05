@@ -5,7 +5,7 @@ set -e
 PWD=$(pwd)
 
 if [ "$#" -ne 2 ]; then
-    echo "USAGE: bin/run.sh <in_file_path> <out_file_path>"
+    echo "USAGE: bin/run_local.sh <in_file_path> <out_file_path>"
     exit 1
 fi
 

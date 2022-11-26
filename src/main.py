@@ -31,7 +31,7 @@ class App:
         """
         execute() - Method to execute App and processing of input file.
         """
-        with open(self.in_file_path, "r") as file:
+        with open(self.in_file_path, "r", encoding="UTF-8") as file:
             while True:
                 row = file.readline().strip()
                 if len(row) == 0:
